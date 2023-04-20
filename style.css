@@ -1,5 +1,5 @@
 body {
-  background-color: #FFC5F2;
+  background-color: #FFFFFF;
 }
 p {
   border: 2px solid black;
@@ -7,8 +7,13 @@ p {
 }
 .grid-container {
   position: absolute;
+  top: 50%;
+  width: 50%;
+  display:grid;
+  grid: 'cell cell cell cell';
+  grid-gap: 10px;
+  background-color: #776e65;
+  padding: 10px;
+  border-radius: 10px;
   z-position: 1;
-}
-.grid-row {
-  
 }
