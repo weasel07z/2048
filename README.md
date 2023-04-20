@@ -1,2 +1,2 @@
 # 2048-att-1
-First try at 2048 html stuff. 
+Learning HTML by making a 2048 game. Probably dogshit but wtv. 
