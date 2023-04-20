@@ -17,3 +17,6 @@ p {
   border-radius: 10px;
   z-position: 1;
 }
+.grid-cell {
+  grid-area: 1;
+}
