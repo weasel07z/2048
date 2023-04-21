@@ -1,4 +1,51 @@
-var myGamePiece;
+var gameBoard = [][];
+var gameOver = false;
+
+function Grid(size){
+    this.size = size;
+    this.cells = [];
+    this.create();
+}
+Grid.prototype.create = function() {
+  for (var i = 0; i < this.size; i++) {
+    var row = this.cells[i] = [];
+    for (var j = 0; j < this.size; j++) {
+      row.push(null);
+    }
+  }
+};
+Grid.prototype.addRandomTile = function() {
+    if(!!this.availableCells.length)
+}
+Grid.prototype.initialTiles = function() {
+    for(var i = 0; i < 2; i++){
+        this.
+    }
+};
+Grid.prototype.setTile = function(tile) {
+    this.cells[tile.x][tile.y] = tile;
+};
+Grid.prototype.getTile = function(cell) {
+    return this.cells[cell.x][cell.y];
+};
+Grid.prototype.removeTile = function(tile){
+    this.cells[tile.x][tile.y] = null;
+};
+
+function Tile(id, x, y) {
+    this.num = 0;
+    this.id = id;
+    this.x = x;
+    this.y = y;
+}
+Tile.prototype.updatePos = function(x, y){
+    this.x = x;
+    this.y = y;
+};
+Tile.prototype.getColor = function(value){
+    return #000000;
+};
+/*var myGamePiece;
 var myObstacles = [];
 var myScore;
 
@@ -121,4 +168,4 @@ function everyinterval(n) {
 
 function accelerate(n) {
     myGamePiece.gravity = n;
-}
+}*/
