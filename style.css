@@ -7,9 +7,9 @@ p {
 }
 .grid-container {
     position: absolute;
-    top: 50%;
-    width: 50%;
-    display:grid;
+    width: 400px;
+    height: 400px;
+    display: grid;
     grid: 'cell cell cell cell';
     grid-gap: 10px;
     background-color: #776e65;
@@ -18,9 +18,10 @@ p {
 }
 .grid-container > div {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
-    padding: 20px 0;
+    font-weight: bold;
+    padding: 25px;
     font-size: 30px;
 }
 .grid-cell {
