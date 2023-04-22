@@ -1,4 +1,4 @@
-var gameBoard = [];
+var gameBoard;
 var gameOver = false;
 
 function Grid(size){
@@ -52,7 +52,25 @@ Grid.prototype.getCell = function(cell) {
 Grid.prototype.removeTile = function(tile){
     this.cells[tile.x][tile.y] = null;
 };
-function display()
+
+function startGame(){
+    var grid = new Grid(4);
+    grid.initialTiles();
+}
+function test(){
+    document.write("WORKS WORKS WORK SOWKRS WORKS");
+}
+function display(){
+    for(var x = 0; x < size; x++){
+        for(var y = 0; y < size; y++){
+            if(cells[x][y] == null){
+                document.getElementById("cell1").innerHTML = 0;
+            } else {
+                document.getElementById("cell2").innerHTML = 1;
+            }
+        }
+    }
+}
 
 // TILES STUFF * * * * * * * * * * * * *
 function Tile(id, x, y, value) {

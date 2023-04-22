@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" scr="game.js"></script>
     <link rel="stylesheet" href="./style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
     <h1>2048 Game thing</h1>
     <div class="grid-container">
-        <div class="grid-cell1">1</div>
-        <div class="grid-cell2">2</div>
-        <div class="grid-cell3">3</div>  
-        <div class="grid-cell4">4</div>
-        <div class="grid-cell5">5</div>
-        <div class="grid-cell6">6</div>
-        <div class="grid-cell7">7</div>
-        <div class="grid-cell8">8</div>
-        <div class="grid-cell9">9</div>
-        <div class="grid-cell10">10</div>
-        <div class="grid-cell11">11</div>
-        <div class="grid-cell12">12</div>
-        <div class="grid-cell13">13</div>
-        <div class="grid-cell14">14</div>
-        <div class="grid-cell15">15</div>
-        <div class="grid-cell16">16</div>
+        <div class="grid-cell1" id="cell1"></div>
+        <div class="grid-cell2" id="cell2">2</div>
+        <div class="grid-cell3" id="cell3">3</div>  
+        <div class="grid-cell4" id="cell4">4</div>
+        <div class="grid-cell5" id="cell5">5</div>
+        <div class="grid-cell6" id="cell6">6</div>
+        <div class="grid-cell7" id="cell7">7</div>
+        <div class="grid-cell8" id="cell8">8</div>
+        <div class="grid-cell9" id="cell9">9</div>
+        <div class="grid-cell10" id="cell10">10</div>
+        <div class="grid-cell11" id="cell11">11</div>
+        <div class="grid-cell12" id="cell12">12</div>
+        <div class="grid-cell13" id="cell13">13</div>
+        <div class="grid-cell14" id="cell14">14</div>
+        <div class="grid-cell15" id="cell15">15</div>
+        <div class="grid-cell16" id="cell16">16</div>
     </div>
     <p>Gaming time</p>
-    <button type="button" onclick="alert('Hello world!')">Click Me!</button>
-    <script scr="script.js"></script>
+    <button type="button" onclick="test2()">test1</button>
+    <button type="button" onclick="startGame()">Start :33333333333333333</button>
+    
+    <script>
+        function test2() {
+            document.getElementById("cell3").innerHTML = 10;
+        }
+    </script>
 </body>
 </html>
