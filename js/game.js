@@ -1,14 +1,12 @@
 var gameBoard;
 var gameOver = false;
-var cells = [[null, null, null, null],
-                [null, null, null, null],
-                [null, null, null, null],
-                [null, null, null, null]];
+var cells = [];
 var ids = [[1, 2, 3, 4],
            [5, 6, 7, 8],
            [9, 10, 11, 12],
            [13, 14, 15, 16]];
 
+/*
 class Grid {
     constructor(size) {
         this.size = size;
@@ -60,28 +58,37 @@ class Grid {
         cells[tile.x][tile.y] = null;
     }
 }
+*/
 
 function startGame(){
-    initialize();
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
-            if(cells[i][j] == null){
-                document.getElementById("cell" + c).innerHTML = 100;
+            if(cells[i][j] !== null){
+                document.getElementById("cell" + c).innerHTML = 0;
                 c++;
             } else {
-                document.getElementById("cell" + c).innerHTML = 200;
+                document.getElementById("cell" + c).innerHTML = 1;
                 c++;
             }
         }
     }
 }
 function initialize(){
+    for (var i = 0; i < 4; i++) {
+        var row = cells[i] = [];
+        for (var j = 0; j < 4; j++) {
+            row.push(null);
+        }
+    }
+    /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
     var celly = parseInt(Math.random() * 4, 10);
     const tile = new Tile(ids[cellx][celly], cellx, celly, val);
     cells[tile.x][tile.y] = tile;
+    */
+   cells[0][0] = new Tile(1, 0, 0, 2);
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
@@ -120,6 +127,9 @@ class Tile {
         this.x = x;
         this.y = y;
         this.id = IDs[x][y];
+    }
+    getValue(){
+        return this.value;
     }
     getColor() {
         return this.color;
