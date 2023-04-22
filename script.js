@@ -1,6 +1,5 @@
 var gameBoard = [];
 var gameOver = false;
-var curId = 0;
 
 function Grid(size){
     this.size = size;
@@ -36,7 +35,6 @@ Grid.prototype.addRandomTile = function() {
         var val = Math.random() < 0.9 ? 2 : 4;
         var cell = this.availableCells[Math.random()*this.availableCells.length];
         var tile = new Tile(IDs[cell.x][cell.y], cell.x, cell.y, val);
-        curId++;
         this.setCell(tile);
     }
 };
@@ -53,7 +51,6 @@ Grid.prototype.getCell = function(cell) {
 };
 Grid.prototype.removeTile = function(tile){
     this.cells[tile.x][tile.y] = null;
-    curId--;
 };
 
 function Tile(id, x, y, value) {
@@ -66,6 +63,7 @@ function Tile(id, x, y, value) {
 Tile.prototype.updatePos = function(x, y){
     this.x = x;
     this.y = y;
+    this.id = IDs[x][y];
 };
 Tile.prototype.getColor = function(){
     return this.color;
