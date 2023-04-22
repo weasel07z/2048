@@ -57,7 +57,7 @@ function startGame(){
     var grid = new Grid(4);
     grid.initialTiles();
 }
-function test(){
+function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
 }
 function display(){
