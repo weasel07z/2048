@@ -2,28 +2,27 @@ body {
     background-color: #FFFFFF;
 }
 p {
+    display: inline;
     border: 2px solid black;
     padding: 10px;
 }
 .grid-container {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    top: 200px;
     display: grid;
-    grid: 'cell cell cell cell';
+    grid-template-columns: 100px 100px 100px 100px;
     grid-gap: 10px;
     background-color: #776e65;
     padding: 10px;
     border-radius: 10px;
-}
-.grid-container > div {
+  }
+  .grid-container > div {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 1);
     text-align: center;
-    font-weight: bold;
-    padding: 25px;
-    font-size: 30px;
-}
-.grid-cell {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .grid-cell {
     grid-area: 1;
-}
+  }
