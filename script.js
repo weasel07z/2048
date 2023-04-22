@@ -52,7 +52,9 @@ Grid.prototype.getCell = function(cell) {
 Grid.prototype.removeTile = function(tile){
     this.cells[tile.x][tile.y] = null;
 };
+function display()
 
+// TILES STUFF * * * * * * * * * * * * *
 function Tile(id, x, y, value) {
     this.id = id;
     this.x = x;
