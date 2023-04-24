@@ -76,9 +76,8 @@ function startGame(){
 }
 function initialize(){
     for (var i = 0; i < 4; i++) {
-        var row = cells[i] = [];
         for (var j = 0; j < 4; j++) {
-            row.push(null);
+            cells[i][j] = null;
         }
     }
     /*
