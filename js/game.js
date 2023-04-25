@@ -120,18 +120,13 @@ class Tile {
         this.x = x;
         this.y = y;
         this.value = value;
-        this.color = black;
     }
     updatePos(x, y) {
         this.x = x;
         this.y = y;
-        this.id = IDs[x][y];
     }
     getValue(){
         return this.value;
-    }
-    getColor() {
-        return this.color;
     }
 }
 
