@@ -77,7 +77,7 @@ function initialize(){
     for (var i = 0; i < 4; i++) {
         cells.push([]);
         for (var j = 0; j < 4; j++) {
-            cells.push(null);
+            cells[i].push(null);
         }
     }
     /*
