@@ -77,7 +77,7 @@ function initialize(){
     for (var i = 0; i < 4; i++) {
         cells.push([]);
         for (var j = 0; j < 4; j++) {
-            cells[i].push(new Tile(ids[i][j], i, j, 2));
+            cells[i].push(new Tile(i, j, 2));
         }
     }
     /*
@@ -115,8 +115,8 @@ function displayGrid(){
 
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
-    constructor(id, x, y, value) {
-        this.id = id;
+    constructor(x, y, value) {
+        //this.id = id;
         this.x = x;
         this.y = y;
         this.value = value;
