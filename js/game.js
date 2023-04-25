@@ -77,17 +77,17 @@ function initialize(){
     for (var i = 0; i < 4; i++) {
         cells.push([]);
         for (var j = 0; j < 4; j++) {
-            cells[i].push(new Tile(i, j, 2));
+            cells[i].push(null);
         }
     }
     /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
     var celly = parseInt(Math.random() * 4, 10);
-    const tile = new Tile(ids[cellx][celly], cellx, celly, val);
+    const tile = new Tile(cellx, celly, val);
     cells[tile.x][tile.y] = tile;
     */
-   //cells[0][0] = 0;
+   cells[0][0] = new Tile(0, 0, 2);
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
@@ -115,11 +115,11 @@ function displayGrid(){
 
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
-    constructor(x, y, value) {
+    constructor(x, y, val) {
         //this.id = id;
         this.x = x;
         this.y = y;
-        this.value = value;
+        this.value = val;
     }
     updatePos(x, y) {
         this.x = x;
