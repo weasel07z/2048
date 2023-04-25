@@ -87,7 +87,7 @@ function initialize(){
     const tile = new Tile(ids[cellx][celly], cellx, celly, val);
     cells[tile.x][tile.y] = tile;
     */
-   cells[0][0] = new Tile(1, 0, 0, 2);
+   cells[0][0] = 0;
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
