@@ -64,13 +64,12 @@ function startGame(){
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
-            if(cells[i][j] !== null){
+            if(ids[i][j] < 8){
                 document.getElementById("cell" + c).innerHTML = 0;
-                c++;
             } else {
                 document.getElementById("cell" + c).innerHTML = 1;
-                c++;
             }
+            c++;
         }
     }
 }
