@@ -1,6 +1,6 @@
 var gameBoard;
 var gameOver = false;
-var cells = [];
+var cells = [[]];
 var ids = [[1, 2, 3, 4],
            [5, 6, 7, 8],
            [9, 10, 11, 12],
@@ -75,6 +75,7 @@ function startGame(){
 }
 function initialize(){
     for (var i = 0; i < 4; i++) {
+        cells.push([]);
         for (var j = 0; j < 4; j++) {
             cells.push(null);
         }
