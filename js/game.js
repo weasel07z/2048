@@ -64,7 +64,7 @@ function startGame(){
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
-            if(ids[i][j] < 8){
+            if(cells[i][j] !== null){
                 document.getElementById("cell" + c).innerHTML = 0;
             } else {
                 document.getElementById("cell" + c).innerHTML = 1;
@@ -76,7 +76,7 @@ function startGame(){
 function initialize(){
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
-            cells[i][j] = null;
+            cells.push(null);
         }
     }
     /*
