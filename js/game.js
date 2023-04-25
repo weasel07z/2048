@@ -64,10 +64,10 @@ function startGame(){
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
-            if(cells[i][j] != 1){
-                document.getElementById("cell" + c).innerHTML = 0;
+            if(cells[i][j].getValue() == 2){
+                document.getElementById("cell" + c).innerHTML = 2;
             } else {
-                document.getElementById("cell" + c).innerHTML = 1;
+                document.getElementById("cell" + c).innerHTML = 0;
             }
             c++;
         }
@@ -77,7 +77,7 @@ function initialize(){
     for (var i = 0; i < 4; i++) {
         cells.push([]);
         for (var j = 0; j < 4; j++) {
-            cells[i].push(1);
+            cells[i].push(new Tile(ids[i][j], i, j, 2));
         }
     }
     /*
@@ -87,7 +87,7 @@ function initialize(){
     const tile = new Tile(ids[cellx][celly], cellx, celly, val);
     cells[tile.x][tile.y] = tile;
     */
-   cells[0][0] = 0;
+   //cells[0][0] = 0;
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
