@@ -60,7 +60,7 @@ class Grid {
 }
 */
 
-function startGame(){
+function updateGame(){
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
@@ -80,6 +80,8 @@ function initialize(){
             cells[i].push(null);
         }
     }
+    spawnRandomTile();
+    spawnRandomTile();
     /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
@@ -87,10 +89,21 @@ function initialize(){
     const tile = new Tile(cellx, celly, val);
     cells[tile.x][tile.y] = tile;
     */
-   cells[0][0] = new Tile(0, 0, 2);
+    //cells[0][0] = new Tile(0, 0, 2);
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
+}
+function spawnRandomTile(){
+    var val = Math.random() < 0.9 ? 2 : 4;
+    var cellx = parseInt(Math.random() * 4, 10);
+    var celly = parseInt(Math.random() * 4, 10);
+    while(cells[cellx][celly] !== null){
+        cellx = parseInt(Math.random() * 4, 10);
+        celly = parseInt(Math.random() * 4, 10);
+    }
+    const tile = new Tile(cellx, celly, val);
+    cells[cellx][celly] = tile;
 }
 function test2() {
     document.getElementById("cell3").innerHTML = 10;
