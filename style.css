@@ -22,6 +22,7 @@ p {
     text-align: center;
     padding: 20px;
     font-size: 20px;
+    color: #f9f6f2;
   }
   .grid-cell {
     grid-area: 1;
