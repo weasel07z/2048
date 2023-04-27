@@ -8,7 +8,7 @@ p {
 }
 .grid-container {
     position: absolute;
-    top: 200px;
+    top: 100px;
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
     grid-gap: 10px;
@@ -16,14 +16,13 @@ p {
     padding: 10px;
     border-radius: 10px;
     color: #f9f6f2;
-    
+    font-size: 55px;
   }
   .grid-container > div {
     border-radius: 10px;
     /*background-color: rgba(255, 255, 255, 0.8);*/
     text-align: center;
     padding: 20px;
-    font-size: 55px;
     font-weight: bold;
     
   }
