@@ -219,8 +219,15 @@ function initialize(){
     spawnRandomTile();
     updateGame();
 }
-function test3(){
-    document.write("WORKS WORKS WORK SOWKRS WORKS");
+function getAvailableCells(){
+    var available = [];
+    for(var i = 0; i < 4; i++){
+       for(var j = 0; j < 4; j++){
+           if(cells[i][j] !== nul){
+             available.push({y: i, x: j};
+           }
+       }
+    }
 }
 function spawnRandomTile(){
     var val = Math.random() < 0.9 ? 2 : 4;
@@ -316,11 +323,6 @@ class Tile {
     }
     getValue(){
         return this.value;
-    }
-    getColor(){
-        if(this.value == 2){
-            return "#f9f6f2";
-        }
     }
 }
 
