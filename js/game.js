@@ -59,9 +59,10 @@ class Grid {
     }
 }
 */
+// MOVEMENT * * * * * * * * * * * * *
 function moveLeft(){
-    for(var i = 0; i < cells.length; i++){
-        for(var j = 0; j < cells[0].length; j++){
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
             if(cells[i][j] === null){
                 continue;
             }
@@ -82,11 +83,13 @@ function moveLeft(){
             }
         }
     }
+    spawnRandomTile();
+    updateGame();
 }
 
 function moveRight(){
-    for(var i = cells.length-1; i >= 0; i--){
-        for(var j = cells[0].length-1; j >= 0; j--){
+    for(let i = 3; i >= 0; i = i-1){
+        for(let j = 3; j >= 0; j = j-1){
             if(cells[i][j] === null){
                 continue;
             }
@@ -107,11 +110,12 @@ function moveRight(){
             }
         }
     }
+    spawnRandomTile();
+    updateGame();
 }  
 function moveDown(){
-    /*
-    for(var i = 3; i > -1; i--){
-        for(var j = 3; j > -1; j--){
+    for(let i = 3; i >= 0; i = i-1){
+        for(let j = 3; j >= 0 ; j = j-1){
             if(cells[i][j] === null){
                 continue;
             }
@@ -132,33 +136,12 @@ function moveDown(){
             }
         }
     }
-    */
-    for(var i = 0; i < cells.length; i++){
-        for(var j = 0; j < cells[0].length; j++){
-            if(cells[i][j] === null){
-                continue;
-            }
-            var num = cells[i][j].getValue();
-            var newI = i;
-            var newJ = j;
-            while(canMove(newI-1, newJ)){
-                newI--;
-            }
-            if(canEat(newI-1, newJ, num)){
-                const tile1 = new Tile(newI-1, newJ, num*2);
-                cells[i][j] = null;
-                cells[newI-1][newJ] = tile1;
-            } else {
-                const tile2 = new Tile(newI, newJ, num);
-                cells[i][j] = null;
-                cells[newI][newJ] = tile2; 
-            }
-        }
-    }
+    spawnRandomTile();
+    updateGame();
 }
 function moveUp(){
-    for(var i = 0; i < cells.length; i++){
-        for(var j = 0; j < cells[0].length; j++){
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
             if(cells[i][j] === null){
                 continue;
             }
@@ -179,10 +162,12 @@ function moveUp(){
             }
         }
     }
+    spawnRandomTile();
+    updateGame();
 }
 
 function canEat(i, j, num){
-    if(i >= cells.length || j >= cells[0].length || i < 0 || j < 0){
+    if(i >= 4 || j >= 4 || i < 0 || j < 0){
         return false;
     }
     if(cells[i][j].getValue() == num){
@@ -191,7 +176,7 @@ function canEat(i, j, num){
     return false;
   }
 function canMove(i, j){
-    if(i >= cells.length || j >= cells[0].length || i < 0 || j < 0 || cells[i][j] !== null){
+    if(i >= 4 || j >= 4 || i < 0 || j < 0 || cells[i][j] !== null){
         return false;
     }
     return true;
@@ -234,26 +219,6 @@ function spawnRandomTile(){
     const tile = new Tile(cellx, celly, val);
     cells[cellx][celly] = tile;
 }
-function test2() {
-    document.getElementById("cell3").innerHTML = 10;
-}
-function displayGrid(){
-    //document.getElementById("cell2").innerHTML = this.getCell();
-
-    /*
-    for(var x = 0; x < size; x++){
-        for(var y = 0; y < size; y++){
-            
-            if(cells[x][y] == null){
-                document.getElementById("cell1").innerHTML = 0;
-            } else {
-                document.getElementById("cell2").innerHTML = 1;
-            }
-        }
-    }
-    */
-    //document.getElementById("cell1").innerHTML = grid.getCell(grid.cells[2][2]);
-}
 
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
@@ -261,10 +226,6 @@ class Tile {
         this.x = x;
         this.y = y;
         this.value = val;
-    }
-    updatePos(x, y) {
-        this.x = x;
-        this.y = y;
     }
     getValue(){
         return this.value;
