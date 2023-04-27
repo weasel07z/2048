@@ -18,11 +18,53 @@ p {
   }
   .grid-container > div {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     text-align: center;
     padding: 20px;
     font-size: 20px;
   }
+  /*
+  .grid-container.two {
+    background-color:#ff0000;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  */
   .grid-cell {
     grid-area: 1;
+  }
+  .two {
+    background-color: #ffffffbb;
+  }
+  .four {
+    background-color: rgb(237,224,200);
+  }
+  .eight {
+    background-color: rgb(242,177,121);
+  }
+  .sixteen {
+    background-color: rgb(245,149,99);
+  }
+  .thirtytwo {
+    background-color: #f67c5f;
+  }
+  .sixtyfour {
+    background-color: #f65e3b;
+  }
+  .onetwentyeight {
+    background-color: #edcf72;
+  }
+  .twofiftysix {
+    background-color: #edcc61;
+  }
+  .fivetwelve {
+    background-color: #edc850;
+  }
+  .tentwentyfour {
+    background-color: #edc53f;
+  }
+  .twentyfourtyeight {
+    background-color: #edc850;
   }

@@ -193,6 +193,7 @@ function updateGame(){
             c++;
         }
     }
+    colors();
 }
 function initialize(){
     for (var i = 0; i < 4; i++) {
@@ -219,7 +220,67 @@ function spawnRandomTile(){
     const tile = new Tile(cellx, celly, val);
     cells[cellx][celly] = tile;
 }
-
+function colors(){
+    for(var i = 0; i < 4; i++){
+        for(var j = 0; j < 4; j++){
+            var els = document.getElementsByClassName('grid-cell'+ids[i][j]);
+            var temp = els[0];
+            if(temp.textContent == 0){
+                removeAllClass(temp);
+            } else if(temp.textContent == 2){
+                removeAllClass(temp);
+                temp.classList.add('two');
+            } else if(temp.textContent == 4){
+                removeAllClass(temp);
+                temp.classList.add('four');
+            } else if(temp.textContent == 8){
+                removeAllClass(temp);
+                temp.classList.add('eight');
+            } else if(temp.textContent == 16){
+                removeAllClass(temp);
+                temp.classList.add('sixteen');
+            } else if(temp.textContent == 32){
+                removeAllClass(temp);
+                temp.classList.add('thirtytwo');
+            } else if(temp.textContent == 64){
+                removeAllClass(temp);
+                temp.classList.add('sixtyfour');
+            } else if(temp.textContent == 128){
+                removeAllClass(temp);
+                temp.classList.add('onetwentyeight');
+            } else if(temp.textContent == 256){
+                removeAllClass(temp);
+                temp.classList.add('twofiftysix');
+            } else if(temp.textContent == 512){
+                removeAllClass(temp);
+                temp.classList.add('fivetwelve');
+            } else if(temp.textContent == 1024){
+                removeAllClass(temp);
+                temp.classList.add('tentwentyfour');
+            } else if(temp.textContent == 2048){
+                removeAllClass(temp);
+                temp.classList.add('twentyfourtyeight');
+            } else {
+                removeAllClass(temp);
+            }
+            
+        }
+    }
+    
+}
+function removeAllClass(thing){
+    thing.classList.remove('two');
+    thing.classList.remove('four');
+    thing.classList.remove('eight');
+    thing.classList.remove('sixteen');
+    thing.classList.remove('thirtytwo');
+    thing.classList.remove('sixtyfour');
+    thing.classList.remove('onetwentyeight');
+    thing.classList.remove('twofiftysix');
+    thing.classList.remove('fivetwelve');
+    thing.classList.remove('tentwentyfour');
+    thing.classList.remove('twentyfourtyeight');
+}
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
     constructor(x, y, val) {
@@ -229,6 +290,11 @@ class Tile {
     }
     getValue(){
         return this.value;
+    }
+    getColor(){
+        if(this.value == 2){
+            return "#f9f6f2";
+        }
     }
 }
 
