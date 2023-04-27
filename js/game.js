@@ -227,6 +227,7 @@ function colors(){
             var temp = els[0];
             if(temp.textContent == 0){
                 removeAllClass(temp);
+                temp.classList.add('zero');
             } else if(temp.textContent == 2){
                 removeAllClass(temp);
                 temp.classList.add('two');
@@ -269,6 +270,7 @@ function colors(){
     
 }
 function removeAllClass(thing){
+    thing.classList.remove('zero');
     thing.classList.remove('two');
     thing.classList.remove('four');
     thing.classList.remove('eight');

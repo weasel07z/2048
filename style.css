@@ -23,17 +23,11 @@ p {
     padding: 20px;
     font-size: 20px;
   }
-  /*
-  .grid-container.two {
-    background-color:#ff0000;
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    border-radius: 10px;
-  }
-  */
   .grid-cell {
     grid-area: 1;
+  }
+  .zero {
+    background-color: #ffffff3f;
   }
   .two {
     background-color: #ffffffbb;
