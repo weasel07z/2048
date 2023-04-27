@@ -35,9 +35,11 @@ p {
   }
   .two {
     background-color: #ffffffbb;
+    color: #605858;
   }
   .four {
     background-color: rgb(237,224,200);
+    color: #605858;
   }
   .eight {
     background-color: rgb(242,177,121);
