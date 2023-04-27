@@ -16,6 +16,7 @@ p {
     padding: 10px;
     border-radius: 10px;
     color: #f9f6f2;
+    font-weight: bold;
   }
   .grid-container > div {
     border-radius: 10px;
