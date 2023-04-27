@@ -59,6 +59,17 @@ class Grid {
     }
 }
 */
+document.addEventListener('keydown', function(key) {
+    if (key.keyCode == 37) {
+        moveLeft();
+    } else if (key.keyCode == 38) {
+        moveUp();
+    } else if(key.keyCode == 39) {
+        moveRight();
+    } else if(key.keyCode == 40) {
+        moveDown();
+    }
+}, true);
 // MOVEMENT * * * * * * * * * * * * *
 function moveLeft(){
     for(let i = 0; i < 4; i++){
