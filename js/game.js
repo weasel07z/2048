@@ -59,13 +59,59 @@ class Grid {
     }
 }
 */
+function moveLeft(){
+    for(var i = 0; i < cells.length; i++){
+        for(var j = 0; j < cells[0].length; j++){
+            if(cells[i][j] === null){
+                continue;
+            }
+            var newI = i;
+            var newJ = j;
+            while(canMove(newI, newJ-1)){
+                newJ--;
+            }
+            if(canEat(newI, newJ-1, cells[i][j].getValue())){
+                cells[i][j] = null;
+                const tile1 = new Tile(newI, newJ, cells[newI][newJ].getValue()*2);
+                cells[newI][newJ] = tile1
+            } else {
+                const tile2 = new Tile(newI, newJ, cells[i][j].getValue());
+                cells[newI][newJ] = tile2
+                cells[i][j] = null; 
+            }
+        }
+    }
+    spawnRandomTile();
+    updateGame();
+}
+function moveRight(){
 
+}  
+function moveDown(){
+
+}
+function moveUp(){
+    
+}
+function canEat(i, j, num){
+    if(i >= cells.length || j >= cells[0].length || i < 0 || j < 0)
+      return false;
+    if(cells[i][j].getValue() === num)
+      return true;
+    return false;
+  }
+function canMove(i, j){
+    if(i >= cells.length || j >= cells[0].length || i < 0 || j < 0 || cells[i][j] !== null){
+        return false;
+    }
+    return true;
+}
 function updateGame(){
     var c = 1;
     for(var i = 0; i < 4; i++){
         for(var j = 0; j < 4; j++){
             if(cells[i][j] !== null){
-                document.getElementById("cell" + c).innerHTML = 2;
+                document.getElementById("cell" + c).innerHTML = cells[i][j].getValue();
             } else {
                 document.getElementById("cell" + c).innerHTML = 0;
             }
@@ -82,14 +128,7 @@ function initialize(){
     }
     spawnRandomTile();
     spawnRandomTile();
-    /*
-    var val = Math.random() < 0.9 ? 2 : 4;
-    var cellx = parseInt(Math.random() * 4, 10);
-    var celly = parseInt(Math.random() * 4, 10);
-    const tile = new Tile(cellx, celly, val);
-    cells[tile.x][tile.y] = tile;
-    */
-    //cells[0][0] = new Tile(0, 0, 2);
+    updateGame();
 }
 function test3(){
     document.write("WORKS WORKS WORK SOWKRS WORKS");
