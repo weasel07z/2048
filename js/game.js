@@ -68,6 +68,8 @@ document.addEventListener('keydown', function(key) {
         moveRight();
     } else if(key.keyCode == 40) {
         moveDown();
+    } else if(key.keyCode == 82){
+        reset();
     }
 }, true);
 // MOVEMENT * * * * * * * * * * * * *
@@ -230,6 +232,17 @@ function spawnRandomTile(){
     }
     const tile = new Tile(cellx, celly, val);
     cells[cellx][celly] = tile;
+}
+function reset() {
+    var t = [[]];
+    for (var i = 0; i < 4; i++) {
+        t.push([]);
+        for (var j = 0; j < 4; j++) {
+            t[i].push(null);
+        }
+    }
+    cells = t;
+    updateGame();
 }
 function colors(){
     for(var i = 0; i < 4; i++){
