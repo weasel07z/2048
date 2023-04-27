@@ -74,7 +74,7 @@ function moveLeft(){
             if(canEat(newI, newJ-1, num)){
                 const tile1 = new Tile(newI, newJ-1, num*2);
                 cells[i][j] = null;
-                cells[newI][newJ-1] = tile1
+                cells[newI][newJ-1] = tile1;
             } else {
                 const tile2 = new Tile(newI, newJ, num);
                 cells[i][j] = null;
@@ -82,20 +82,105 @@ function moveLeft(){
             }
         }
     }
-    spawnRandomTile();
-    updateGame();
 }
-/*
-function moveRight(){
 
+function moveRight(){
+    for(var i = cells.length-1; i >= 0; i--){
+        for(var j = cells[0].length-1; j >= 0; j--){
+            if(cells[i][j] === null){
+                continue;
+            }
+            var num = cells[i][j].getValue();
+            var newI = i;
+            var newJ = j;
+            while(canMove(newI, newJ+1)){
+                newJ++;
+            }
+            if(canEat(newI, newJ+1, num)){
+                const tile3 = new Tile(newI, newJ+1, num*2);
+                cells[i][j] = null;
+                cells[newI][newJ+1] = tile3;
+            } else {
+                const tile4 = new Tile(newI, newJ, num);
+                cells[i][j] = null;
+                cells[newI][newJ] = tile4; 
+            }
+        }
+    }
 }  
 function moveDown(){
-
+    /*
+    for(var i = 3; i > -1; i--){
+        for(var j = 3; j > -1; j--){
+            if(cells[i][j] === null){
+                continue;
+            }
+            var num = cells[i][j].getValue();
+            var newI = i;
+            var newJ = j;
+            while(canMove(newI+1, newJ)){
+                newI++;
+            }
+            if(canEat(newI+1, newJ, num)){
+                const tile1 = new Tile(newI+1, newJ, num*2);
+                cells[i][j] = null;
+                cells[newI+1][newJ] = tile1;
+            } else {
+                const tile2 = new Tile(newI, newJ, num);
+                cells[i][j] = null;
+                cells[newI][newJ] = tile2; 
+            }
+        }
+    }
+    */
+    for(var i = 0; i < cells.length; i++){
+        for(var j = 0; j < cells[0].length; j++){
+            if(cells[i][j] === null){
+                continue;
+            }
+            var num = cells[i][j].getValue();
+            var newI = i;
+            var newJ = j;
+            while(canMove(newI-1, newJ)){
+                newI--;
+            }
+            if(canEat(newI-1, newJ, num)){
+                const tile1 = new Tile(newI-1, newJ, num*2);
+                cells[i][j] = null;
+                cells[newI-1][newJ] = tile1;
+            } else {
+                const tile2 = new Tile(newI, newJ, num);
+                cells[i][j] = null;
+                cells[newI][newJ] = tile2; 
+            }
+        }
+    }
 }
 function moveUp(){
-    
+    for(var i = 0; i < cells.length; i++){
+        for(var j = 0; j < cells[0].length; j++){
+            if(cells[i][j] === null){
+                continue;
+            }
+            var num = cells[i][j].getValue();
+            var newI = i;
+            var newJ = j;
+            while(canMove(newI-1, newJ)){
+                newI--;
+            }
+            if(canEat(newI-1, newJ, num)){
+                const tile1 = new Tile(newI-1, newJ, num*2);
+                cells[i][j] = null;
+                cells[newI-1][newJ] = tile1;
+            } else {
+                const tile2 = new Tile(newI, newJ, num);
+                cells[i][j] = null;
+                cells[newI][newJ] = tile2; 
+            }
+        }
+    }
 }
-*/
+
 function canEat(i, j, num){
     if(i >= cells.length || j >= cells[0].length || i < 0 || j < 0){
         return false;
@@ -173,7 +258,6 @@ function displayGrid(){
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
     constructor(x, y, val) {
-        //this.id = id;
         this.x = x;
         this.y = y;
         this.value = val;
