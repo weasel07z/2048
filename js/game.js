@@ -232,7 +232,7 @@ function getAvailableCells(){
 }
 function spawnRandomTile(){
     var avail = getAvailableCells();
-        if (!!avail.length) {
+        if(avail.length > 0) {
            var val = Math.random() < 0.9 ? 2 : 4;
            var cell = avail[Math.random() * avail.length];
            const tile = new Tile(cell.x, cell.y, val);
