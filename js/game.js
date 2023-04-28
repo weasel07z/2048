@@ -224,7 +224,7 @@ function getAvailableCells(){
     for(var i = 0; i < 4; i++){
        for(var j = 0; j < 4; j++){
            if(cells[i][j] !== nul){
-             available.push({y: i, x: j};
+             available.push({y: i, x: j});
            }
        }
     }
