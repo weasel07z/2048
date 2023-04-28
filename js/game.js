@@ -230,6 +230,13 @@ function getAvailableCells(){
     }
 }
 function spawnRandomTile(){
+        if (!!this.getAvailableCells().length) {
+           var val = Math.random() < 0.9 ? 2 : 4;
+           var cell = this.getAvailableCells[Math.random() * this.getAvailableCells.length];
+           const tile = new Tile(cell.x, cell.y, val);
+           cells[cell.y][cell.x]
+        }
+           /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
     var celly = parseInt(Math.random() * 4, 10);
@@ -239,6 +246,7 @@ function spawnRandomTile(){
     }
     const tile = new Tile(cellx, celly, val);
     cells[cellx][celly] = tile;
+    */
 }
 function reset() {
     var t = [[]];
