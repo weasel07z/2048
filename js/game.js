@@ -223,21 +223,22 @@ function getAvailableCells(){
     var available = [];
     for(var i = 0; i < 4; i++){
        for(var j = 0; j < 4; j++){
-           if(cells[i][j] === null){
-             available.push({y: i, x: j});
+           if(cells[i][j] == null){
+             available.push({x: i, y: j});
            }
        }
     }
     return available;
 }
 function spawnRandomTile(){
-    var avail = getAvailableCells();
-        if(avail.length > 0) {
-           var val = Math.random() < 0.9 ? 2 : 4;
-           var cell = avail[Math.random() * avail.length];
-           const tile = new Tile(cell.x, cell.y, val);
-           cells[cell.y][cell.x] = tile;
-        }
+    var avail = [];
+    avail = getAvailableCells();
+    if(avail.length > 0) {
+       var val = Math.random() < 0.9 ? 2 : 4;
+       var cell = avail[parseInt(Math.random() * avail.length, 10)];
+       const tile = new Tile(cell.x, cell.y, val);
+       cells[cell.x][cell.y] = tile;
+    }
            /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
