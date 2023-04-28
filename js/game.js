@@ -5,7 +5,7 @@ var ids = [[1, 2, 3, 4],
            [5, 6, 7, 8],
            [9, 10, 11, 12],
            [13, 14, 15, 16]];
-
+var didMove = false;
 /*
 class Grid {
     constructor(size) {
@@ -89,8 +89,12 @@ function moveLeft(){
                 const tile1 = new Tile(newI, newJ-1, num*2);
                 cells[i][j] = null;
                 cells[newI][newJ-1] = tile1;
+                didMove = true;
             } else {
                 const tile2 = new Tile(newI, newJ, num);
+                if(newI != i || newJ != j){
+                      didMove = true;
+                }
                 cells[i][j] = null;
                 cells[newI][newJ] = tile2; 
             }
@@ -116,8 +120,12 @@ function moveRight(){
                 const tile3 = new Tile(newI, newJ+1, num*2);
                 cells[i][j] = null;
                 cells[newI][newJ+1] = tile3;
+                didMove = true;
             } else {
                 const tile4 = new Tile(newI, newJ, num);
+                if(newI != i || newJ != j){
+                      didMove = true;
+                }       
                 cells[i][j] = null;
                 cells[newI][newJ] = tile4; 
             }
@@ -142,8 +150,12 @@ function moveDown(){
                 const tile1 = new Tile(newI+1, newJ, num*2);
                 cells[i][j] = null;
                 cells[newI+1][newJ] = tile1;
+                didMove = true;
             } else {
                 const tile2 = new Tile(newI, newJ, num);
+                if(newI != i || newJ != j){
+                      didMove = true;
+                }       
                 cells[i][j] = null;
                 cells[newI][newJ] = tile2; 
             }
@@ -168,8 +180,12 @@ function moveUp(){
                 const tile1 = new Tile(newI-1, newJ, num*2);
                 cells[i][j] = null;
                 cells[newI-1][newJ] = tile1;
+                didMove = true;
             } else {
                 const tile2 = new Tile(newI, newJ, num);
+                if(newI != i || newJ != j){
+                      didMove = true;
+                }       
                 cells[i][j] = null;
                 cells[newI][newJ] = tile2; 
             }
@@ -178,6 +194,10 @@ function moveUp(){
     spawnRandomTile();
     updateGame();
 }
+function canMoveLeft(){
+           
+}
+
 
 function canEat(i, j, num){
     if(i >= 4 || j >= 4 || i < 0 || j < 0){
@@ -207,6 +227,7 @@ function updateGame(){
         }
     }
     colors();
+    didMove = false;
 }
 function initialize(){
     for (var i = 0; i < 4; i++) {
@@ -215,6 +236,7 @@ function initialize(){
             cells[i].push(null);
         }
     }
+    didMove = true;
     spawnRandomTile();
     spawnRandomTile();
     updateGame();
@@ -231,13 +253,15 @@ function getAvailableCells(){
     return available;
 }
 function spawnRandomTile(){
-    var avail = [];
-    avail = getAvailableCells();
-    if(avail.length > 0) {
-       var val = Math.random() < 0.9 ? 2 : 4;
-       var cell = avail[parseInt(Math.random() * avail.length, 10)];
-       const tile = new Tile(cell.x, cell.y, val);
-       cells[cell.x][cell.y] = tile;
+    if(didMove){
+           var avail = [];
+           avail = getAvailableCells();
+           if(avail.length > 0) {
+               var val = Math.random() < 0.9 ? 2 : 4;
+               var cell = avail[parseInt(Math.random() * avail.length, 10)];
+               const tile = new Tile(cell.x, cell.y, val);
+               cells[cell.x][cell.y] = tile;
+           }
     }
            /*
     var val = Math.random() < 0.9 ? 2 : 4;
