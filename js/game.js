@@ -236,7 +236,7 @@ function spawnRandomTile(){
            var val = Math.random() < 0.9 ? 2 : 4;
            var cell = avail[Math.random() * avail.length];
            const tile = new Tile(cell.x, cell.y, val);
-           cells[cell.y][cell.x]
+           cells[cell.y][cell.x] = tile;
         }
            /*
     var val = Math.random() < 0.9 ? 2 : 4;
