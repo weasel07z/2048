@@ -194,9 +194,9 @@ function moveUp(){
     spawnRandomTile();
     updateGame();
 }
-function canMoveLeft(){
+//function canMoveLeft(){
            
-}
+//}
 
 
 function canEat(i, j, num){
@@ -284,6 +284,9 @@ function reset() {
         }
     }
     cells = t;
+    didMove = true;
+    spawnRandomTile();
+    spawnRandomTile();
     updateGame();
 }
 function colors(){
@@ -327,8 +330,12 @@ function colors(){
             } else if(temp.textContent == 2048){
                 removeAllClass(temp);
                 temp.classList.add('twentyfourtyeight');
+            } else if(temp.textContent.length < 5){
+                removeAllClass(temp);
+                temp.classList.add('fourtyninetysix');
             } else {
                 removeAllClass(temp);
+                temp.classList.add('passed');
             }
             
         }
@@ -348,7 +355,32 @@ function removeAllClass(thing){
     thing.classList.remove('fivetwelve');
     thing.classList.remove('tentwentyfour');
     thing.classList.remove('twentyfourtyeight');
+    thing.classList.remove('fourtyninetysix');
+    thing.classList.remove('passed');
 }
+
+// TEMP * * * * * * * * * * * 
+function spawn1024(){
+    const tile = new Tile(0,0,1024);
+    cells[0][0] = tile;
+    updateGame();
+}
+function spawn2048(){
+    const tile = new Tile(1,0,2048);
+    cells[0][1] = tile;
+    updateGame();
+}
+function spawn4096(){
+    const tile = new Tile(2,0,4096);
+    cells[0][2] = tile;
+    updateGame();
+}
+function spawn16384(){
+    const tile = new Tile(3,0,16384);
+    cells[0][3] = tile;
+    updateGame();
+}
+
 // TILES STUFF * * * * * * * * * * * * *
 class Tile {
     constructor(x, y, val) {

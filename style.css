@@ -1,5 +1,5 @@
 body {
-    background-color: #FFFFFF;
+    background-color: #faf8ef;
 }
 p {
     display: inline;
@@ -8,30 +8,36 @@ p {
 }
 .grid-container {
     position: absolute;
-    top: 120px;
+    top: 100px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
-    grid-gap: 10px;
-    background-color: #776e65;
-    padding: 20px;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-gap: 15px;
+    background-color: #bbada0;
+    padding: 15px;
     border-radius: 10px;
     color: #f9f6f2;
-    font-size: 35px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    
   }
   .grid-container > div {
     border-radius: 10px;
-    /*background-color: rgba(255, 255, 255, 0.8);*/
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-    font-family: Verdana, sans-serif;
+    text-align: middle;
+    line-height: 100px;
   }
   .grid-cell {
     grid-area: 1;
   }
   .zero {
-    background-color: #ffffff3f;
+    background-color: rgba(238, 228, 218, 0.35);
     color:#776e6500;
+    
   }
   .two {
     background-color: #ffffffbb;
@@ -55,21 +61,34 @@ p {
   }
   .onetwentyeight {
     background-color: #edcf72;
-    font-size: 30px;
+
+    font-size: 35px;
   }
   .twofiftysix {
     background-color: #edcc61;
-      font-size: 30px;
+
+    font-size: 35px;
   }
   .fivetwelve {
     background-color: #edc850;
-      font-size: 30px;
+
+    font-size: 35px;
   }
   .tentwentyfour {
     background-color: #edc53f;
-      font-size: 30px;
+    font-size: 30px;
   }
   .twentyfourtyeight {
     background-color: #edc850;
-      font-size: 30px;
+    font-size: 30px;
+
+  }
+  .fourtyninetysix {
+    background-color: #edc850;
+    font-size: 30px;
+
+  }
+  .passed {
+    background-color: #edc850;
+    font-size: 25px;
   }
