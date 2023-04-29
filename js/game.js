@@ -6,59 +6,6 @@ var ids = [[1, 2, 3, 4],
            [9, 10, 11, 12],
            [13, 14, 15, 16]];
 var didMove = false;
-/*
-class Grid {
-    constructor(size) {
-        this.size = size;
-        this.IDs = [];
-    }
-    create() {
-        var c = 1;
-        for (var i = 0; i < this.size; i++) {
-            var row = cells[i] = [];
-            var row2 = this.IDs[i] = [];
-            for (var j = 0; j < this.size; j++) {
-                row.push(null);
-                row2.push(c);
-                c++;
-            }
-        }
-    }
-    availableCells() {
-        var available = [];
-        for (var i = 0; i < this.size; i++) {
-            for (var j = 0; j < this.size; j++) {
-                if (cells[i][j] == null) {
-                    available.push({ x: i, y: j });
-                }
-            }
-        }
-        return available;
-    }
-    addRandomTile() {
-        if (!!this.availableCells().length) {
-            var val = Math.random() < 0.9 ? 2 : 4;
-            var cell = this.availableCells[Math.random() * this.availableCells.length];
-            const tile = new Tile(IDs[cell.x][cell.y], cell.x, cell.y, val);
-            this.setCell(tile);
-        }
-    }
-    initialTiles() {
-        for (var i = 0; i < 2; i++) {
-            this.addRandomTile();
-        }
-    }
-    setCell(tile) {
-        cells[tile.x][tile.y] = tile;
-    }
-    getCell(cell) {
-        return cells[cell.x][cell.y];
-    }
-    removeTile(tile) {
-        cells[tile.x][tile.y] = null;
-    }
-}
-*/
 document.addEventListener('keydown', function(key) {
     if (key.keyCode == 37) {
         moveLeft();
