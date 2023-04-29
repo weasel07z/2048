@@ -6,6 +6,7 @@ var ids = [[1, 2, 3, 4],
            [9, 10, 11, 12],
            [13, 14, 15, 16]];
 var didMove = false;
+
 document.addEventListener('keydown', function(key) {
     if (key.keyCode == 37) {
         moveLeft();
