@@ -7,6 +7,7 @@ p {
     padding: 10px;
 }
 h1 {
+    positition: center;
     font-size:80px;
     font-weight: bold;
     text-align: middle;
