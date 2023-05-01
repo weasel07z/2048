@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body onload="initialize()">
-    <h1>2048</h1>
-    <p>Gaming time</p>
+    <div>
+        <h1>2048</h1>
+        <p class="one">Multiply the numbers to get to <strong>2048!</strong></p>
+    </div>
+    <hr class="one">
     <div class="grid-container">
         <div class="grid-cell1" id="cell1">1</div>
         <div class="grid-cell2" id="cell2">2</div>
@@ -25,6 +28,10 @@
         <div class="grid-cell14" id="cell14">14</div>
         <div class="grid-cell15" id="cell15">15</div>
         <div class="grid-cell16" id="cell16">16</div>
+    </div>
+    <div class="credits-container">
+        <hr class="two">
+        <p class="two"><strong>HOW TO PLAY: </strong>Use the arrow keys to move the tiles. If two tiles with the same number hit together, they merge into one!</p>
     </div>
 </body>
 </html>

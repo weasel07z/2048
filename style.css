@@ -1,99 +1,135 @@
 body {
-    background-color: #faf8ef;
+  background-color: #faf8ef;
 }
-p {
-    display: inline;
-    border: 2px solid black;
-    padding: 10px;
-}
+
 h1 {
-    display: inline;
-    font-size:80px;
-    font-weight: bold;
+  position: absolute;
+  top:20px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -40%);
+  font-size: 125px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #605858;
+}
+p.one {
+  position: absolute;
+  width: 100%;
+  right:1px;
+  text-align: center;
+  font-size: 18px;
+  top: 170px;
+  font-family: Verdana, sans-serif;
+  color: #776e65;
+}
+p.two {
+  position: relative;
+  line-height: 1.65;
+  font-size:20px;
+  font-family: Verdana, sans-serif;
+}
+hr.one {
+  position: relative;
+  margin-top: 220px;
+  width:460px;
+}
+hr.two {
+  position: relative;
+  width: 460px;
+  margin-top: 10px;
+}
+.credits-container {
+  position: absolute;
+  width:460px;
+  top: 750px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
 }
 .grid-container {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, 0%);
-    display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px;
-    grid-gap: 15px;
-    background-color: #bbada0;
-    padding: 15px;
-    border-radius: 10px;
-    color: #f9f6f2;
-    font-size: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-family: Verdana, sans-serif;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+  grid-gap: 15px;
+  background-color: #bbada0;
+  padding: 15px;
+  border-radius: 10px;
+  color: #f9f6f2;
+  font-size: 45px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
     
-  }
-  .grid-container > div {
-    border-radius: 10px;
-    text-align: middle;
-    line-height: 100px;
-  }
-  .grid-cell {
-    grid-area: 1;
-  }
-  .zero {
-    background-color: rgba(238, 228, 218, 0.35);
-    color:#776e6500;
-    
-  }
-  .two {
-    background-color: #ffffffbb;
-    color: #605858;
-  }
-  .four {
-    background-color: rgb(237,224,200);
-    color: #605858;
-  }
-  .eight {
-    background-color: rgb(242,177,121);
-  }
-  .sixteen {
-    background-color: rgb(245,149,99);
-  }
-  .thirtytwo {
-    background-color: #f67c5f;
-  }
-  .sixtyfour {
-    background-color: #f65e3b;
-  }
-  .onetwentyeight {
-    background-color: #edcf72;
+}
+.grid-container > div {
+  border-radius: 10px;
+  text-align: middle;
+  line-height: 100px;
+}
+.grid-cell {
+  grid-area: 1;
+}
+.zero {
+  background-color: rgba(238, 228, 218, 0.35);
+  color:#776e6500;
+  
+}
+.two {
+  background-color: #ffffffbb;
+  color: #605858;
+}
+.four {
+  background-color: rgb(237,224,200);
+  color: #605858;
+}
+.eight {
+  background-color: rgb(242,177,121);
+}
+.sixteen {
+  background-color: rgb(245,149,99);
+}
+.thirtytwo {
+  background-color: #f67c5f;
+}
+.sixtyfour {
+  background-color: #f65e3b;
+}
+.onetwentyeight {
+  background-color: #edcf72;
 
-    font-size: 35px;
-  }
-  .twofiftysix {
-    background-color: #edcc61;
+  font-size: 35px;
+}
+.twofiftysix {
+  background-color: #edcc61;
 
-    font-size: 35px;
-  }
-  .fivetwelve {
-    background-color: #edc850;
+  font-size: 35px;
+}
+.fivetwelve {
+  background-color: #edc850;
 
-    font-size: 35px;
-  }
-  .tentwentyfour {
-    background-color: #edc53f;
-    font-size: 30px;
-  }
-  .twentyfourtyeight {
-    background-color: #edc850;
-    font-size: 30px;
+  font-size: 35px;
+}
+.tentwentyfour {
+  background-color: #edc53f;
+  font-size: 30px;
+}
+.twentyfourtyeight {
+  background-color: #edc850;
+  font-size: 30px;
 
-  }
-  .fourtyninetysix {
-    background-color: #edc850;
-    font-size: 30px;
+}
+.fourtyninetysix {
+  background-color: #edc850;
+  font-size: 30px;
 
-  }
-  .passed {
-    background-color: #edc850;
-    font-size: 25px;
-  }
+}
+.passed {
+  background-color: #edc850;
+  font-size: 25px;
+}
