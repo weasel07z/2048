@@ -8,6 +8,7 @@ p {
 }
 h1 {
     positition: static;
+    display: inline;
     font-size:80px;
     font-weight: bold;
 }
@@ -16,7 +17,7 @@ h1 {
     top: 200px;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 0%);
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px;
