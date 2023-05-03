@@ -145,8 +145,6 @@ function moveUp(){
 //function canMoveLeft(){
            
 //}
-
-
 function canEat(i, j, num){
     if(i >= 4 || j >= 4 || i < 0 || j < 0){
         return false;
@@ -202,16 +200,16 @@ function getAvailableCells(){
 }
 function spawnRandomTile(){
     if(didMove){
-           var avail = [];
-           avail = getAvailableCells();
-           if(avail.length > 0) {
-               var val = Math.random() < 0.9 ? 2 : 4;
-               var cell = avail[parseInt(Math.random() * avail.length, 10)];
-               const tile = new Tile(cell.x, cell.y, val);
-               cells[cell.x][cell.y] = tile;
-           }
+        var avail = [];
+        avail = getAvailableCells();
+        if(avail.length > 0) {
+            var val = Math.random() < 0.9 ? 2 : 4;
+            var cell = avail[parseInt(Math.random() * avail.length, 10)];
+            const tile = new Tile(cell.x, cell.y, val);
+            cells[cell.x][cell.y] = tile;
+        }
     }
-           /*
+    /*
     var val = Math.random() < 0.9 ? 2 : 4;
     var cellx = parseInt(Math.random() * 4, 10);
     var celly = parseInt(Math.random() * 4, 10);
@@ -236,6 +234,7 @@ function reset() {
     spawnRandomTile();
     spawnRandomTile();
     updateGame();
+
 }
 function colors(){
     for(var i = 0; i < 4; i++){
