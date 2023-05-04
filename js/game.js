@@ -7,17 +7,21 @@ var ids = [[1, 2, 3, 4],
            [13, 14, 15, 16]];
 var didMove = false;
 
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
 document.addEventListener('keydown', function(key) {
     if (key.keyCode == 37) {
         moveLeft();
     } else if (key.keyCode == 38) {
         moveUp();
-        key.preventDefault();
     } else if(key.keyCode == 39) {
         moveRight();
     } else if(key.keyCode == 40) {
         moveDown();
-               key.preventDefault();
     } else if(key.keyCode == 82){
         reset();
     }
