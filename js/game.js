@@ -12,10 +12,12 @@ document.addEventListener('keydown', function(key) {
         moveLeft();
     } else if (key.keyCode == 38) {
         moveUp();
+        key.preventDefault();
     } else if(key.keyCode == 39) {
         moveRight();
     } else if(key.keyCode == 40) {
         moveDown();
+               key.preventDefault();
     } else if(key.keyCode == 82){
         reset();
     }
