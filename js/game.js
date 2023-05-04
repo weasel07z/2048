@@ -148,9 +148,24 @@ function moveUp(){
     spawnRandomTile();
     updateGame();
 }
-//function canMoveLeft(){
-           
-//}
+function hasLost(){
+    for(var i = 0; i < 4; i++){
+        for(var j = 0; j < 4; j++){
+                if(cells[i][j] == null){
+                      return false;
+                } else if(canMove(i-1, j) || canEat(i-1, j, cells[i][j].getValue())){
+                      return false;
+                } else if(canMove(i+1,j) || canEat(i+1, j, cells[i][j].getValue())){
+                      return false;
+                } else if(canMove(i,j-1) || canEat(i, j-1, cells[i][j].getValue())){
+                      return false;
+                } else if(canMove(i,j+1) || canEat(i, j+1, cells[i][j].getValue())){
+                      return false;
+                }
+        }
+    }
+    return true;
+}
 function canEat(i, j, num){
     if(i >= 4 || j >= 4 || i < 0 || j < 0){
         return false;
@@ -159,7 +174,7 @@ function canEat(i, j, num){
       return true;
     }
     return false;
-  }
+}
 function canMove(i, j){
     if(i >= 4 || j >= 4 || i < 0 || j < 0 || cells[i][j] !== null){
         return false;
@@ -179,6 +194,9 @@ function updateGame(){
         }
     }
     colors();
+    if(hasLost()){
+       reset();
+    }
     didMove = false;
 }
 function initialize(){
